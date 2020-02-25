@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+ 
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+        function getData() {
+            return Math.random();
+        
+            
+        }
+        Plotly.plot('chart',[{
+            y:[getData()],
+            type:'line'
+        }]);
+        var cnt = 0;
+        setInterval(function(){
+                Plotly.extendTraces('chart',{ y:[[getData()]]}, [0]);
+                cnt++;
+                if(cnt > 500) {
+                    Plotly.relayout('chart',{
+                        xaxis: {
+                            range: [cnt-500,cnt]
+                        }
+                    });
+                }
+            },15);
+
+   </Script>     
+</body>
+</html>
+
