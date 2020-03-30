@@ -1,6 +1,6 @@
 function login_page() {
     firebase.auth().onAuthStateChanged((user) => {
-        if (user && user.email == 'prodadmin@test.com') {
+        if (user && user.email === 'prodadmin@test.com') {
             window.location.href = '/home'
         } else {
             glPageContent.innerHTML = `
@@ -20,7 +20,7 @@ async function signIn(){
    // console.log('signIn()')
     try{
         const email = document.getElementById('email').value
-        if (email != 'prodadmin@test.com'){
+        if (email !== 'prodadmin@test.com'){
             throw new Error('Not product admin')
         }
         const password = document.getElementById('password').value

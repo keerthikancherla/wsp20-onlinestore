@@ -104,15 +104,15 @@ async function update(index){
     //ready to update
     let updated = false
     const newInfo = {}
-    if (p.name != newName){
+    if (p.name !== newName){
         newInfo.name = newName
         updated = true
     }
-    if(p.summary != newSummary){
+    if(p.summary !== newSummary){
         newInfo.summary = newSummary
         updated = true
     }
-    if(p.price != newPrice) {
+    if(p.price !== newPrice) {
         newInfo.price  = Number(Number(newPrice).toFixed(2))
         updated = true
     }

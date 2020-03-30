@@ -42,6 +42,7 @@
     <script src = "js/auth.js"></script>
     <script src = "js/home_page.js"></script>
     <script src = "js/show_page.js"></script>
+    <script src="js/main_pwd.js"></script>
     <script>
         const glPageContent = document.getElementById('page_content')
         const IMAGE_FOLDER = 'products/'
@@ -56,7 +57,10 @@
                 add_page()
             }else if (currentPath == '/show'){
                 show_page()
-            }else{
+            }else if (currentPath == '/pwd'){
+                main_pwd()
+            }
+            else{
                 window.location.href = '/'
             }
         }
